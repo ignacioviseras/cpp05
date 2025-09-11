@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
 class Bureaucrat {
 protected:
@@ -12,7 +13,8 @@ public:
     Bureaucrat(const Bureaucrat& other);
     Bureaucrat& operator=(const Bureaucrat& other);
     ~Bureaucrat();
-
+    
+    void signForm(Form& f);
 	const std::string& getName() const;
     int getGrade() const;
 	void incrementGrade();

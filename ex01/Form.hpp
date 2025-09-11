@@ -12,17 +12,17 @@ private:
     const int _gradeToExecute;
 public:
     Form();
-    Form(const std::string& name, bool singed, int gradeToSign, int gradeToExecute);
+    Form(const std::string& name, int gradeToSign, int gradeToExecute);
     Form(const Form& other);
     Form& operator=(const Form& other);
     ~Form();
 
 	const std::string& getName() const;
-    int isSinged() const;
+    bool isSigned() const;
 	int getGradeToSing() const;
     int getGradeToExecute() const;
 
-    void beSinged(const Bureaucrat& b);
+    void beSigned(const Bureaucrat& b);
 	class GradeTooHighException : public std::exception {
         public:
             const char* what() const throw();

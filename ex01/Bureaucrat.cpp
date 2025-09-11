@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 //constructor without data
 Bureaucrat::Bureaucrat() : _name("unnamed"), _grade(150) {}
@@ -24,6 +25,16 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 
 Bureaucrat::~Bureaucrat() {
 	
+}
+
+void Bureaucrat::signForm(Form& f) {
+	try {
+		f.beSigned(*this);
+		std::cout << _name << " signed " << f.getName() << std::endl;
+	} catch (std::exception& e) {
+		std::cout << _name << " couldnt sign " << f.getName()
+			<< "\n  error: " << e.what() << std::endl;
+	}
 }
 
 const std::string& Bureaucrat::getName() const {
