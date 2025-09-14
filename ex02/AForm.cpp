@@ -26,7 +26,7 @@ AForm& AForm::operator=(const AForm& other) {
 
 void execute(Bureaucrat const & executor) const {
 	if (!this->isSigned())
-		throw std::cerr << "form " << this->_name << "not signed" << std::endl;
+		throw std::cerr << " form " << this->_name << "not signed" << std::endl;
 	if (executor.getGrade() > this->getGradeToExecute())
         throw GradeTooLowException();
     this->executeAction();
