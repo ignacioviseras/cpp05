@@ -55,18 +55,16 @@
 // De lo contrario, imprima un mensaje de error explícito.
 // Implemente y envíe algunas pruebas para garantizar que todo funcione como se esperaba.
 
-// #pragma once
-// #include <iostream>
-// #include <string>
-// #include "AForm.hpp"
+#pragma once
+#include <iostream>
+#include <string>
+#include "AForm.hpp"
 
-// class PresidentialPardonForm : public AForm {
-// public:
-//     PresidentialPardonForm();
-//     PresidentialPardonForm(const std::string& name, int grade);
-//     PresidentialPardonForm(const PresidentialPardonForm& other);
-//     PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
-//     ~PresidentialPardonForm();
-
-// };
-// std::ostream& operator<<(std::ostream& os, const PresidentialPardonForm& s);
+class PresidentialPardonForm : public AForm {
+	private:
+		std::string _target;
+	public:
+		PresidentialPardonForm(std::string target);
+		~PresidentialPardonForm();
+		void executeAction() const;
+};
