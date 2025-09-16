@@ -8,42 +8,43 @@ int main()
 {
 
     try {
-        // Bureaucrats con distintos niveles
-        Bureaucrat high("paco", 1);
-        Bureaucrat mid("juan", 50);
-        Bureaucrat low("pepe", 150);
+        Bureaucrat paco("paco", 1);
+        Bureaucrat juan("juan", 50);
+        Bureaucrat pepe("pepe", 150);
 
-        // Formularios
-        ShrubberyCreationForm shrub("home");
-        RobotomyRequestForm robot("Bender");
-        PresidentialPardonForm pardon("Ford Prefect");
-
-        std::cout << "\n---- Intento de ejecutar sin firmar ----" << std::endl;
+        ShrubberyCreationForm shrub("shurb");
+        RobotomyRequestForm robot("robot");
+        PresidentialPardonForm pardon("pardon");
+        
+        std::cout << "\n";
+        std::cout << "execute without signature" << std::endl;
         try {
-            high.executeForm(shrub);
+            paco.executeForm(shrub);
         } catch (std::exception &e) {
             std::cerr << "Error: " << e.what() << std::endl;
         }
 
-        std::cout << "\n---- Firmando todos los formularios ----" << std::endl;
-        high.signForm(shrub);
-        high.signForm(robot);
-        high.signForm(pardon);
+        std::cout << "\n";
+        std::cout << "signature all form" << std::endl;
+        paco.signForm(shrub);
+        paco.signForm(robot);
+        paco.signForm(pardon);
 
-        // pepe no puede ejecutar ninguno
-        low.executeForm(shrub);
-        low.executeForm(robot);
-        low.executeForm(pardon);
+        pepe.executeForm(shrub);
+        pepe.executeForm(robot);
+        pepe.executeForm(pardon);
 
-        std::cout << "\n---- juan (grade 50) intenta ejecutar ----" << std::endl;
-        mid.executeForm(shrub);
-        mid.executeForm(robot);
-        mid.executeForm(pardon);
+        std::cout << "\n";
+        std::cout << "try to execute 'grade 50'" << std::endl;
+        juan.executeForm(shrub);
+        juan.executeForm(robot);
+        juan.executeForm(pardon);
 
-        std::cout << "\n---- paco (grade 1) ejecuta todos ----" << std::endl;
-        high.executeForm(shrub);
-        high.executeForm(robot);
-        high.executeForm(pardon);
+        std::cout << "\n";
+        std::cout << "try to execute 'grade 1'" << std::endl;
+        paco.executeForm(shrub);
+        paco.executeForm(robot);
+        paco.executeForm(pardon);
     }
     catch (std::exception &e) {
         std::cerr << "Excepción principal: " << e.what() << std::endl;

@@ -4,13 +4,13 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("robotomy",
 }
 
 void RobotomyRequestForm::executeAction() const {
-    std::cout << _target << "Makes some drilling noises" << std::endl;
+    std::cout << _target << " \n*Makes some drilling noises*" << std::endl;
     int n;
     n = rand() % 100+1;
     if (n > 50)
-        std::cout << _target << " has been robotomized" << std::endl;
+        std::cout << _target << " has been robotomized\n" << std::endl;
     else
-        std::cout << _target << " failed robotomy" << std::endl;
+        std::cout << _target << " failed robotomy\n" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
