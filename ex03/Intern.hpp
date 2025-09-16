@@ -11,7 +11,8 @@
 // Intern creates <form>
 // If the provided form name does not exist, print an explicit error message.
 
-// You must avoid unreadable and messy solutions, such as using an excessive if/elseif/else structure. This kind of approach will not be accepted during the evaluation
+// You must avoid unreadable and messy solutions, such as using an excessive if/elseif/else structure.
+// This kind of approach will not be accepted during the evaluation
 // process. You’re not in the Piscine (pool) anymore. As usual, you must test everything
 // to ensure it works as expected.
 // For example, the following code creates a RobotomyRequestForm targeted at
@@ -22,17 +23,46 @@
 // 	AForm* rrf;
 // 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 // }
+//-----------------------------------------------
+// Dado que llenar formularios todo el día sería demasiado cruel para nuestros burócratas,
+// los pasantes existen para asumir esta tediosa tarea.
+// En este ejercicio, debes implementar la clase Intern. El
+// El pasante no tiene nombre, grado ni características únicas. Lo único burócratas
+// Lo que más nos importa es que hagan su trabajo.
+// Sin embargo, el pasante tiene una habilidad clave: la función makeForm(). Esta función
+// toma dos cadenas como parámetros: la primera representa el nombre de un formulario y la
+// el segundo representa el objetivo del formulario. Devuelve un puntero a un objeto AForm
+// (correspondiente al nombre del formulario pasado como parámetro), con su objetivo inicializado en
+// el segundo parámetro.
+// Debería imprimir algo como:
+// El pasante crea <formulario>
+// Si el nombre del formulario proporcionado no existe, imprima un mensaje de error explícito.
+
+// Debe evitar soluciones ilegibles y desordenadas, como el uso de una estructura if/elseif/else excesiva.
+// Este tipo de enfoque no será aceptado durante la evaluación.
+// proceso. Ya no estás en la Piscine (piscina). Como siempre, debes probar todo.
+// para garantizar que funcione como se esperaba.
+// Por ejemplo, el siguiente código crea un RobotomyRequestForm dirigido a
+// "Juerga":
+
+// {
+// 	Pasante algúnPasanteAleatorio;
+// 	Forma A* rrf;
+// 	rrf = someRandomIntern.makeForm("solicitud de robotectomía", "Bender");
+// }
+
 
 #pragma once
 #include <iostream>
 #include <string>
 #include "Intern.hpp"
+#include "AForm.hpp"
 
-class Intern : public AForm {
-	private:
-		std::string _xxxx;
+class Intern{
 	public:
-		Intern(std::string target);
+		Intern();
+		Intern(const Intern &);
+		Intern &operator=(const Intern &);
 		~Intern();
-		void executeAction() const;
+		AForm* makeForm(std::string const &formName, std::string const &target);
 };

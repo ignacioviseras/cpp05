@@ -10,8 +10,8 @@ std::string write_tree() {
     for (int i = 0; i < height; ++i) {
         int spaces = height - i - 1;
         for (int s = 0; s < spaces; ++s) tree << ' ';
-        for (int j = 0; j < (2 * i + 1); ++j) tree << '*';
-        tree << '\n';
+            for (int j = 0; j < (2 * i + 1); ++j) tree << '*';
+            tree << '\n';
     }
     for (int t = 0; t < 1; ++t) {
         for (int s = 0; s < height - 1; ++s) tree << ' ';
